@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;500&display=swap" rel="stylesheet">
+  <title>With Pets</title>
+</head>
+<body class="">
+  <header class="w-full py-5 px-5 flex justify-between items-center ">
+    <div class="w-full  flex items-center ">
+        <a href="" class="flex items-center ">
+        <img src="./img/ロゴ２.jpg" class="h-24 mr-5" alt="">
+        <div class="title-text">
+          <p class="">引取り補償付き<br>
+            ペット仲介サービス</p>
+          <h1 class="title">With Pets</h1>
+        </div>
+      </a>
+    </div>
+    <!-- ナビゲーションメニュー -->
+    <div class="w-2/3">
+      <nav class="w-full">
+        <ul class="navi w-full flex justify-around" >
+          <li><a href="#about">About</a></li>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#matching">Matching</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <!-- レスポンシブ用のハンバーガーメニュー -->
+        <div class="w-full humburger-menu h-full hidden  ">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <nav class="globalMenuSp">
+            <ul>
+          <li><a href="">About</a></li>
+          <li><a href="">Service</a></li>
+          <li><a href="">Maching</a></li>
+          <li><a href="">Price</a></li>
+          <li><a href="">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>  
+    </div>
+  </header>
+  <main class="w-full ">
+    <div class="mainWrapper w-full">
+
+      <!-- home section -->
+      <section id="home" class="home">
+        <div class="home-container">
+          <div class="home-img">
+            <img src="./img/nekotoroujin.jpg" class="hero-img" alt="">
+          </div>
+          <div class="home-text-box">
+            <h1 class="home-title">安心してペットと暮らすために</h1>
+            <p class="home-text">XXXXXXXXXX</p>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <h2 id="" class="">About</h2>
+      </section>
+<!-- Search Section -->
+      <section id="search" class="search">
+        <h2>Search</h2>
+        <div id="search-menu" class="search-menu">
+          <div class="search-select">
+            <label for="card-area">エリア</label>
+            <select name="" id="card-area">
+              <option value="東京都">東京都</option>
+              <option value="福岡県">福岡県</option>
+              <option value="北海道">北海道</option>
+            </select>
+            <!-- <input type="text" id="card-area" > -->
+            <label for="card-type">性格</label>
+            <select name="" id="card-type">
+              <option value="甘えん坊">甘えん坊</option>
+              <option value="人が大好き">人が大好き</option>
+              <option value="野性派タイプ">野性派タイプ</option>
+              <option value="引っ込み思案">引っ込み思案</option>
+            </select>
+            <!-- <input type="text" id="card-type" > -->
+            <label for="card-jander">性別</label>
+            <select name="" id="card-jander">
+              <option value="男の子">男の子</option>
+              <option value="女の子">女の子</option>
+            </select>
+            <!-- <input type="text" id="card-jander" > -->
+          </div>
+            <div class="search-menu-button">
+              <button id="search-button" class="search-button">検索</button>
+              <button id="favorite-index-button" class="favorite-index-button">お気に入り一覧</button>
+              <button id="back" class="hidden">戻る</button>
+            </div>
+        </div>
+        <div id="search_card-container" class="search_card-container"></div>
+        <div id="favorite-container" class="favorite-container hidden">
+        </div>
+        
+      </section>
+
+
+<!-- Muching section -->
+<section id="matching" class="muching">
+        <h2 class="sectionM ">Matching</h2>
+        <div class="matching-wrapper ">
+          <div id="matching-test" class="matching-test">
+            <div id="test-box" class="w-full">
+              <!-- 心理テスト開始ボタン -->
+              <button id="test-button" class="test-button">猫との相性診断テスト</button>
+              <!-- 心理テストの問題をJavaScriptを利用して表示させる -->
+              <div id="test" class="test hidden">
+                <div class="question " id="question1">
+                  <p>問１：日中の活動はどちらが好きですか？</p>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion(1)">外で遊ぶ</button>
+                    <button class="answer" onclick="answerQuestion(2)">室内で過ごす</button>
+                  </div>
+                </div>
+                
+                <div class="question " id="question2">
+                  <p>問２：社交的な集まりに参加するのは好きですか？</p>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion2(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion2(2)">いいえ</button>
+                  </div>
+                </div>
+                
+                <div class="question" id="question3">
+                  <p>問３：落ち着いた雰囲気の場所が好きですか？</p>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion3(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion3(2)">いいえ</button>
+                  </div>
+                </div>
+                
+                <div class="question" id="question4">
+                  <p>問４：自分の時間を大切にする方ですか？</p>
+                  <div class="answer-box my-4 flex justify-around">
+                    <button class="answer" onclick="answerQuestion4(1)">はい</button>
+                    <button class="answer" onclick="answerQuestion4(2)">いいえ</button>
+                  </div>
+                </div>
+                
+                <div class="result" id="result">
+                  <p id="category"></p>
+                  
+                  <button id="matching-start" class="matching-start  hidden">Matching Start</button>
+                  <button id="matching-start2" class="matching-start hidden">Matching Start</button>
+                  <button id="matching-start3" class="matching-start hidden">Matching Start</button>
+                  <button id="matching-start4" class="matching-start hidden">Matching Start</button>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        <!-- 　マッチング -->
+          <div id="matching-container" class="matching-container hidden">
+            <div id="like" class="muching-button">
+              <p>Like</p>
+            </div>
+            <!-- Matching card -->
+            <div id="matching-card" class="muching-card mx-6">
+            <!-- いいね -->
+              <div id="iine" class="iine w-full hidden " >
+                <img class="w-full" src="./img/iine.png" alt="いいね">
+              </div>
+              <h3 id="cat-name" class="cat-name"></h3>
+              <img id="img" src="" alt="猫の写真" class="cat-img">
+              <div class="muching-card_discription w-4/5 flex flex-wrap justify-center " >
+                <div id="area" class="item0"><p></p></div>
+                <div id="" class="item1"><p>性別</p></div>
+                <div id="jander" class="item1"><p></p></div>
+                <div id="" class="item1"><p>年齢</p></div>
+                <div id="" class="item1"><p><span id="age"></span>歳</p></div>
+                <div id="" class="item2"><p>種類</p></div>
+                <div id="type" class="item3"><p></p></div>
+                <div id="" class="item0 text-left flex justify-center">
+                  <p id="discrition">
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="next" class="muching-button">
+              <p>Next</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section id="price" class="price">
+        <h2>Price</h2>
+      </section>
+      <section id="faq" class="faq">
+        <h2>FAQ</h2>
+      </section>
+      <!-- 新しいセクションでコンタクトページを作る -->
+      
+
+
+    </div>
+  </main>
+  <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="./JS/matching.js"></script>
+  <script src="./JS/header.js"></script>
+  <script src="./JS/search.js"></script>
+</body>
+</html>

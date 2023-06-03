@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>心理テスト</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .question {
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+    }
+
+    .answer {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .result {
+      display: none;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>心理テスト</h1>
+
+  <div class="question" id="question1">
+    <p>問１：日中の活動はどちらが好きですか？</p>
+    <button class="answer" onclick="answerQuestion('外で遊ぶ')">外で遊ぶ</button>
+    <button class="answer" onclick="answerQuestion('室内で過ごす')">室内で過ごす</button>
+  </div>
+
+  <div class="question" id="question2">
+    <p>問２：社交的な集まりに参加するのは好きですか？</p>
+    <button class="answer" onclick="answerQuestion('はい')">はい</button>
+    <button class="answer" onclick="answerQuestion('いいえ')">いいえ</button>
+  </div>
+
+  <div class="question" id="question3">
+    <p>問３：落ち着いた雰囲気の場所が好きですか？</p>
+    <button class="answer" onclick="answerQuestion('はい')">はい</button>
+    <button class="answer" onclick="answerQuestion('いいえ')">いいえ</button>
+  </div>
+
+  <div class="question" id="question4">
+    <p>問４：自分の時間を大切にする方ですか？</p>
+    <button class="answer" onclick="answerQuestion('はい')">はい</button>
+    <button class="answer" onclick="answerQuestion('いいえ')">いいえ</button>
+  </div>
+
+  <div class="result" id="result">
+    <h2>結果</h2>
+    <p id="category"></p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var currentQuestion = 1;
+    var answers = [];
+
+    function showQuestion(questionNumber) {
+      $('.question').hide();
+      $('#question' + questionNumber).show();
+    }
+
+    function answerQuestion(answer) {
+      answers.push(answer);
+      currentQuestion++;
+
+      if (currentQuestion <= 4) {
+        showQuestion(currentQuestion);
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      var result = getResult();
+      $('.question').hide();
+      $('.result').show();
+      $('#category').text(result);
+    }
+
+    function getResult() {
+      var combination = answers.join('');
+
+      if (combination === '外で遊ぶはいはい') {
+        return 'カテゴリ1の結果です。';
+      } else if (combination === '外で遊ぶはいいいえ') {
+        return 'カテゴリ2の結果です。';
+      } else if (combination === '外で遊ぶいいえはい') {
+        return 'カテゴリ3の結果です。';
+      } else if (combination === '外で遊ぶいいえいいえ') {
+        return 'カテゴリ4の結果です。';
+      } else {
+        return '分類できませんでした。';
+      }
+    }
+
+    $(document).ready(function () {
+      showQuestion(currentQuestion);
+    });
+  </script>
+</body>
+
+</html>
