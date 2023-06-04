@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/output.css">
+  <link rel="stylesheet" href="./css/chat.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,8 +207,27 @@
       <section id="price" class="price">
         <h2>Price</h2>
       </section>
+
+      <!-- FAQ Section -->
       <section id="faq" class="faq">
         <h2>FAQ</h2>
+        <div class="chat-container w-full flex flex-col  items-center">
+          <div class=""><label for="">名前</label><input type="text" id="uname"></div>
+          <div class="utext">
+            <textarea name="" id="text" cols="30" rows="10"></textarea>
+            <div class="w-full flex justify-center">
+              <button id="send" class="chat-submit">送信</button>
+            </div>
+          </div>
+          <div id="output" class="output"></div>
+        </div>
+
+
+
+
+
+
+
       </section>
       <!-- 新しいセクションでコンタクトページを作る -->
       
@@ -217,6 +237,8 @@
   </main>
   <footer></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script type="module" src="./JS/chat.js">
+  </script>
   <script src="./JS/matching.js"></script>
   <script src="./JS/header.js"></script>
   <script src="./JS/search.js"></script>
