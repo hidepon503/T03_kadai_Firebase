@@ -1,27 +1,20 @@
 // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
       import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-      // Your web app's Firebase configuration
-      
+
+      // importでenv.jsを読み込む。{}がなければenv.jsのenvでenv.js全体が読み込まれる。
       import env from "./env.js";
       console.log(env);
       
-      // const firebaseConfig = {
-      //   apiKey: "AIzaSyBCDr0lGUxA1QDZ9guCB1DCF7hvIpZhSAc",
-      //   authDomain: "dev25t03-firebase-chatapp.firebaseapp.com",
-      //   projectId: "dev25t03-firebase-chatapp",
-      //   storageBucket: "dev25t03-firebase-chatapp.appspot.com",
-      //   messagingSenderId: "3305384957",
-      //   appId: "1:3305384957:web:b31d730320d21559b20794"
-      // };
       // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
+      // env.js内のfirebaseConfigを読み込む。
+      const app = initializeApp(env.firebaseConfig);
       const db = getDatabase(app);
       const dbRef = ref(db, "chat");
-      // const dbRef2 = ref(db, "chat2");
+      const dbRef2 = ref(db, "chat2");
+      
 
+      // チャットの送信ボタンを押したときの処理
       $("#send").on("click", function () {
         // const uname = $("#uname").val();
         // const text = $("#text").val();
@@ -34,14 +27,37 @@
         set(newPostRef, msg);
       });
 
+      // チャットの削除ボタンを押したときの処理
+      $(document).on("click", "#delete", function () {
+        const key = $(this).data("key");
+        remove(ref(db, `chat/${key}`));
+      });
+
+      // チャットの編集ボタンを押したときの処理
+      $(document).on("click", "#edit", function () {
+        const key = $(this).data("key");
+        const uname = $(this).data("uname");
+        const text = $(this).data("text");
+        $("#uname").val(uname);
+        $("#text").val(text);
+        $("#send").hide();
+        $("#update").data('key', key).show();
+        
+      });
+
+
+
       onChildAdded(dbRef, function (data) {
         const msg = data.val();
         const key = data.key;
         let h = `
-  <h1 class="test">
-      <p>${msg.uname}</p>
-      <p>${msg.text}</p>
-  </h1>
-  `
+        <div class="test">
+            <p>${msg.uname}</p>
+            <p>${msg.text}</p>
+            <button id=edit" class="edit" data-key="${key}" data-uname="${msg.uname}">Edit</button>
+            <button id="delete" class="delete" data-key="${key}">Delete</button>
+
+        </div>
+        `
         $("#output").append(h);
       });
