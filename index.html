@@ -211,15 +211,19 @@
       <!-- FAQ Section -->
       <section id="faq" class="faq">
         <h2>FAQ</h2>
-        <div class="chat-container w-full flex flex-col  items-center">
-          <div class=""><label for="">名前</label><input type="text" id="uname"></div>
-          <div class="utext">
-            <textarea name="" id="text" cols="30" rows="10"></textarea>
-            <div class="w-full flex justify-center">
-              <button id="send" class="chat-submit">送信</button>
+        <div class="chat-container w-full flex-col items-center">
+          <div class="w-2/3">
+            <!-- <label for="">名前</label> -->
+            <div class="faq-form w-full">
+              <input type="text" id="uname" class="uname">
+              <textarea name="" class="text" id="text" cols="30" rows="2"></textarea>
             </div>
+            <div class="faq-button-box w-full flex justify-center">
+              <button id="send" class="chat-submit">送信</button>
+              <button id="update" class="hidden chat-submit">更新</button>
+            </div>
+            <div id="output" class="output"></div>
           </div>
-          <div id="output" class="output"></div>
         </div>
 
 

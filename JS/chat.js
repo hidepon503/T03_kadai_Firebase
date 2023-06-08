@@ -4,7 +4,6 @@
 
       // importでenv.jsを読み込む。{}がなければenv.jsのenvでenv.js全体が読み込まれる。
       import env from "./env.js";
-      console.log(env);
       
       // Initialize Firebase
       // env.js内のfirebaseConfigを読み込む。
@@ -16,48 +15,70 @@
 
       // チャットの送信ボタンを押したときの処理
       $("#send").on("click", function () {
-        // const uname = $("#uname").val();
-        // const text = $("#text").val();
-        // alert(uname + text);
         const msg = {
           uname: $("#uname").val(),
           text: $("#text").val()
         }
         const newPostRef = push(dbRef);
         set(newPostRef, msg);
+        $("#uname").val("");
+        $("#text").val("");
+
       });
-
-      // チャットの削除ボタンを押したときの処理
-      $(document).on("click", "#delete", function () {
-        const key = $(this).data("key");
-        remove(ref(db, `chat/${key}`));
-      });
-
-      // チャットの編集ボタンを押したときの処理
-      $(document).on("click", "#edit", function () {
-        const key = $(this).data("key");
-        const uname = $(this).data("uname");
-        const text = $(this).data("text");
-        $("#uname").val(uname);
-        $("#text").val(text);
-        $("#send").hide();
-        $("#update").data('key', key).show();
-        
-      });
-
-
 
       onChildAdded(dbRef, function (data) {
         const msg = data.val();
         const key = data.key;
         let h = `
-        <div class="test">
-            <p>${msg.uname}</p>
-            <p>${msg.text}</p>
-            <button id=edit" class="edit" data-key="${key}" data-uname="${msg.uname}">Edit</button>
-            <button id="delete" class="delete" data-key="${key}">Delete</button>
-
+        <div class="chat-result-container" data-key="${key}">
+            <div class="chat-result-form w-full">
+              <p class="chat-result-uname" id="">${msg.uname}</p>
+              <p class="chat-result-text" id="">${msg.text}</p>
+            </div>
+            <div class="chat-result-buttons">
+              <button id="edit" class="edit w-1/3" data-key="${key}" data-uname="${msg.uname}">Edit</button>
+              <button id="delete" class="delete w-1/3" data-key="${key}">Delete</button>
+            </div>
         </div>
         `
         $("#output").append(h);
       });
+
+      // チャットの削除ボタンを押したときの処理
+      $(document).on("click", ".delete", function () {
+        const key = $(this).data("key");
+        remove(ref(db, `chat/${key}`));
+      });
+      onChildRemoved(dbRef, (data) => {
+        const key = data.key;
+        $(`.chat-result-container[data-key=${key}]`).remove();      
+      });
+
+      // チャットの編集ボタンを押したときの処理
+      // $(document).on("click", '.edit',function () {
+      //   const key = $(this).data("key");
+      //   const msg = {
+      //     uname: $("#uname").val(),
+      //     text: $("#text").val()
+      //   };
+      //   $("#uname").val(msg.uname);
+      //   $("#text").val(msg.text);
+      //   $("#update").data('key', key);
+      //   $("#send").fadeOut(1000);
+      //   $("#update").show();
+      // });
+      
+      // チャットの更新ボタンを押したときの処理
+      // $('#update').on('click', function() {
+      //   const key = $(this).data('key');
+      //   const msg = {
+      //       uname: $("#uname").val(),
+      //       text: $("#text").val()
+      //   };
+      //   set(ref(db, `chat/${key}`), msg);
+      //   $('#uname').val('');
+      //   $('#text').val('');
+      //   $('#send').fadeOut(1000);
+      //   $(this).hide();
+      // });
+
