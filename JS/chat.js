@@ -23,7 +23,6 @@
         set(newPostRef, msg);
         $("#uname").val("");
         $("#text").val("");
-
       });
 
       onChildAdded(dbRef, function (data) {
@@ -36,8 +35,8 @@
               <p class="chat-result-text" id="">${msg.text}</p>
             </div>
             <div class="chat-result-buttons">
-              <button id="edit" class="edit w-1/3" data-key="${key}" data-uname="${msg.uname}">Edit</button>
-              <button id="delete" class="delete w-1/3" data-key="${key}">Delete</button>
+              <button id="${key}-edit" class="edit w-1/3" data-key="${key}" data-uname="${msg.uname}">Edit</button>
+              <button id="${key}-delete" class="delete w-1/3" data-key="${key}">Delete</button>
             </div>
         </div>
         `
@@ -55,30 +54,38 @@
       });
 
       // チャットの編集ボタンを押したときの処理
-      // $(document).on("click", '.edit',function () {
-      //   const key = $(this).data("key");
-      //   const msg = {
-      //     uname: $("#uname").val(),
-      //     text: $("#text").val()
-      //   };
-      //   $("#uname").val(msg.uname);
-      //   $("#text").val(msg.text);
-      //   $("#update").data('key', key);
-      //   $("#send").fadeOut(1000);
-      //   $("#update").show();
-      // });
+      $(document).on("click", '.edit',function () {
+        const key = $(this).data("key");
+        const uname = $(this).data("uname");
+        const text = $(this).closest(".chat-result-container").find(".chat-result-text").text();
+        
+        $("#uname").val(uname);
+        $("#text").val(text);
+        $("#update").data('key', key);
+        $("#send").fadeOut(1000, function() {
+            $("#update").show();
+        });
+      });
       
       // チャットの更新ボタンを押したときの処理
-      // $('#update').on('click', function() {
-      //   const key = $(this).data('key');
-      //   const msg = {
-      //       uname: $("#uname").val(),
-      //       text: $("#text").val()
-      //   };
-      //   set(ref(db, `chat/${key}`), msg);
-      //   $('#uname').val('');
-      //   $('#text').val('');
-      //   $('#send').fadeOut(1000);
-      //   $(this).hide();
-      // });
+      $('#update').on('click', function() {
+        const key = $(this).data('key');
+        const msg = {
+            uname: $("#uname").val(),
+            text: $("#text").val()
+        };
+        set(ref(db, `chat/${key}`), msg);
 
+        // メッセージを更新する
+        $(`.chat-result-container[data-key=${key}] .chat-result-uname`).text(msg.uname);
+        $(`.chat-result-container[data-key=${key}] .chat-result-text`).text(msg.text);
+
+
+        $('#uname').val('');
+        $('#text').val('');
+        $('#send').fadeIn(1000);
+        $(this).hide();
+      });
+
+      
+   
