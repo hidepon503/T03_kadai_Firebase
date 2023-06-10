@@ -1,64 +1,64 @@
 // 猫の情報を配列で定義
 let cats = [
   {
-    name: '海（うみ）', location: '東京都', personality: '甘えん坊', img: '../img/cats/umi 2.jpg', age: 5, jender: '女の子', type: 'マンチカン', comment: 'texttexttexttexttexttexttexttexttext'
+    name: '海（うみ）', location: '東京都', personality: '甘えん坊', img: '../img/cats/umi 2.jpg', age: 5, jender: '女の子', type: 'マンチカン', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: '空(そら)', location: '東京都', personality: '甘えん坊', img: '../img/cats/sora.jpeg', age: '6', jender: '男の子', type: 'ポメラニアン'
+    name: '空(そら)', location: '東京都', personality: '甘えん坊', img: '../img/cats/sora.jpeg', age: '6', jender: '男の子', type: 'ポメラニアン', favorite: 0,
   },
-  { name: 'キキ', location: '北海道', personality: '甘えん坊', img: '../img/cats/kiki.jpg', age: '12', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext' },
+  { name: 'キキ', location: '北海道', personality: '甘えん坊', img: '../img/cats/kiki.jpg', age: '12', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0, },
   {
-    name: 'まる', location: '福岡県', personality: '甘えん坊', img: '../img/cats/maru.jpg', age: '4', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
-  },
-  {
-    name: 'ブー', location: '福岡県', personality: '甘えん坊', img: '../img/cats/bu-.jpg', age: '8', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'まる', location: '福岡県', personality: '甘えん坊', img: '../img/cats/maru.jpg', age: '4', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'みー', location: '東京都', personality: '人が大好き', img: '../img/cats/mi-.jpg', age: '5', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
-  },
-  { name: 'もふ', location: '北海道', personality: '人が大好き', img: '../img/cats/mohu.jpg', age: '7', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext' },
-  { name: 'ねね', location: '北海道', personality: '甘えん坊', img: '../img/cats/nene.jpg', age: '3', jender: '', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext' },
-  {
-    name: 'たま', location: '東京都', personality: '人が大好き', img: '../img/cats/tama.jpg', age: '9', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ブー', location: '福岡県', personality: '甘えん坊', img: '../img/cats/bu-.jpg', age: '8', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ネル', location: '福岡県', personality: '甘えん坊', img: '../img/cats/neru.jpg', age: '12', jender: '男の子', type: '女の子', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'みー', location: '東京都', personality: '人が大好き', img: '../img/cats/mi-.jpg', age: '5', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
+  },
+  { name: 'もふ', location: '北海道', personality: '人が大好き', img: '../img/cats/mohu.jpg', age: '7', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0, },
+  { name: 'ねね', location: '北海道', personality: '甘えん坊', img: '../img/cats/nene.jpg', age: '3', jender: '', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0, },
+  {
+    name: 'たま', location: '東京都', personality: '人が大好き', img: '../img/cats/tama.jpg', age: '9', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'レオ', location: '福岡県', personality: '野生派タイプ', img: '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg', age: '5', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ネル', location: '福岡県', personality: '甘えん坊', img: '../img/cats/neru.jpg', age: '12', jender: '男の子', type: '女の子', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'きなこ', location: '東京都', personality: '野生派タイプ', img: '../img/cats2/photo-1545315171-cc80c905c252.jpeg', age: '10', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'レオ', location: '福岡県', personality: '野生派タイプ', img: '../img/cats2/photo-1511694009171-3cdddf4484ff.jpeg', age: '5', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'むぎ', location: '北海道', personality: '甘えん坊', img: '../img/cats2/photo-1638826595775-e2eae86cda8e.jpeg', age: '8', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'きなこ', location: '東京都', personality: '野生派タイプ', img: '../img/cats2/photo-1545315171-cc80c905c252.jpeg', age: '10', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ルナ', location: '北海道', personality: '野生派タイプ', img: '../img/cats2/photo-1638826596253-45c356e832bf.jpeg', age: '13', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'むぎ', location: '北海道', personality: '甘えん坊', img: '../img/cats2/photo-1638826595775-e2eae86cda8e.jpeg', age: '8', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ラテ', location: '東京都', personality: '引っ込み思案', img: '../img/cats3/calmness-g44ffdd400_640.jpg', age: '6', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ルナ', location: '北海道', personality: '野生派タイプ', img: '../img/cats2/photo-1638826596253-45c356e832bf.jpeg', age: '13', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ベル', location: '福岡県', personality: '引っ込み思案', img: '../img/cats3/cat-g12833497f_640.jpg', age: '9', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ラテ', location: '東京都', personality: '引っ込み思案', img: '../img/cats3/calmness-g44ffdd400_640.jpg', age: '6', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ここ', location: '北海道', personality: '引っ込み思案', img: '../img/cats3/cat-g12833497f_640.jpg', age: '3', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ベル', location: '福岡県', personality: '引っ込み思案', img: '../img/cats3/cat-g12833497f_640.jpg', age: '9', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ルイ', location: '東京都', personality: '野性派タイプ', img: '../img/cats3/relaxation-gef56a588f_640.jpg', age: '4', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ここ', location: '北海道', personality: '引っ込み思案', img: '../img/cats3/cat-g12833497f_640.jpg', age: '3', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'マロン', location: '東京都', personality: '野性派タイプ', img: '../img/cats4/2670442_s.jpg', age: '5', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ルイ', location: '東京都', personality: '野性派タイプ', img: '../img/cats3/relaxation-gef56a588f_640.jpg', age: '4', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'うに', location: '北海道', personality: '甘えん坊', img: '../img/cats4/3848209_s.jpg', age: '7', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'マロン', location: '東京都', personality: '野性派タイプ', img: '../img/cats4/2670442_s.jpg', age: '5', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: 'ルル', location: '福岡県', personality: '引っ込み思案', img: '../img/cats4/cat-gb47a1e0e1_640.jpg', age: '2', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'うに', location: '北海道', personality: '甘えん坊', img: '../img/cats4/3848209_s.jpg', age: '7', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   },
   {
-    name: '琥琥（こはく）', location: '東京都', personality: '引っ込み思案', img: '../img/cats4/kat-g2da8cdb7e_640.jpg', age: '3', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext'
+    name: 'ルル', location: '福岡県', personality: '引っ込み思案', img: '../img/cats4/cat-gb47a1e0e1_640.jpg', age: '2', jender: '女の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
+  },
+  {
+    name: '琥琥（こはく）', location: '東京都', personality: '引っ込み思案', img: '../img/cats4/kat-g2da8cdb7e_640.jpg', age: '3', jender: '男の子', type: 'MIX', comment: 'texttexttexttexttexttexttexttexttext', favorite: 0,
   }
 ];
 

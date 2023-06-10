@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="./css/output.css">
   <link rel="stylesheet" href="./css/chat.css">
   <link rel="stylesheet" href="./css/style.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.3.1"></script>
   <title>With Pets</title>
 </head>
 <body class="">
@@ -31,6 +33,7 @@
         <ul class="navi w-full flex justify-around" >
           <li><a href="#about">About</a></li>
           <li><a href="#search">Search</a></li>
+          <li><a href="#search2">Search2</a></li>
           <li><a href="#matching">Matching</a></li>
           <li><a href="#price">Price</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -111,7 +114,14 @@
         </div>
         
       </section>
+<!--search2セクション-->
+<section id="search2">
+  <h2>Search2</h2>
+  <!-- ページ移動用のボタン -->
+  <div id="card-container"></div>
+  <div id="pagination"></div>
 
+</section>
 
 <!-- Muching section -->
 <section id="matching" class="muching">
@@ -220,7 +230,7 @@
             </div>
             <div class="faq-button-box w-full flex justify-center">
               <button id="send" class="chat-submit">送信</button>
-              <button id="update" class="hidden chat-submit">更新</button>
+              <button id="update" class="hidden chat-submit">Update</button>
             </div>
             <div id="output" class="output"></div>
           </div>
@@ -241,7 +251,7 @@
   </main>
   <footer></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script type="module" src="./JS/chat.js">
+  <script type="module" src="./JS/firebase.js">
   </script>
   <script src="./JS/matching.js"></script>
   <script src="./JS/header.js"></script>

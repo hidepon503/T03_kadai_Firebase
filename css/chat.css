@@ -43,7 +43,7 @@
 }
 .chat-submit{
   width: 30%;
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   border-radius: 15px;
   background-color: #FFD34D;
 }
@@ -64,7 +64,6 @@
 .chat-result-container{
   width: 100%;
   display: flex;
-  flex-direction: column;
   margin-bottom: 1rem;
 }
 .chat-result-form{
@@ -83,13 +82,13 @@
   background-color: #FFFFFF;
 }
 .chat-result-buttons{
-  width: 100%;
+  width: 70%;
   display: flex; 
   justify-content: space-around;
 }
 .edit{
   width: 30%;
-  padding: 0.5rem 1rem;
+  padding: 0 0 0 0;
   border-radius: 15px;
   background-color: #FFD34D;
   border: none;
